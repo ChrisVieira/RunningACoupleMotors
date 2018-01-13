@@ -14,7 +14,7 @@ public class RunNegative extends Command {
 	}
 
 	protected void execute() {
-		Robot.MotorSet.runFullSpeedNegative(0.4);
+		Robot.MotorSet.runFullSpeedNegative(1);
 	}
 
 	protected boolean isFinished() {
@@ -22,8 +22,10 @@ public class RunNegative extends Command {
 	}
 
 	protected void end() {
+		Robot.MotorSet.stop();
 	}
 
 	protected void interrupted() {
+		Robot.MotorSet.stop();
 	}
 }

@@ -14,7 +14,7 @@ public class RunPositive extends Command {
 	}
 
 	protected void execute() {
-		Robot.MotorSet.runFullSpeedPositive(0.4);
+		Robot.MotorSet.runFullSpeedPositive(1);
 	}
 
 	protected boolean isFinished() {
@@ -22,8 +22,10 @@ public class RunPositive extends Command {
 	}
 
 	protected void end() {
+		Robot.MotorSet.stop();
 	}
 
 	protected void interrupted() {
+		Robot.MotorSet.stop();
 	}
 }

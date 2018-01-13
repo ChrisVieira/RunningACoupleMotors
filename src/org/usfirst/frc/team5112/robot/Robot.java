@@ -25,7 +25,7 @@ import org.usfirst.frc.team5112.robot.subsystems.MotorSet;
  * project.
  */
 public class Robot extends TimedRobot {
-	public static final MotorSet MotorSet = new MotorSet();
+	public static MotorSet MotorSet;
 	public static OI m_oi;
 
 	Command m_autonomousCommand;
@@ -38,6 +38,7 @@ public class Robot extends TimedRobot {
 	@Override
 	public void robotInit() {
 		RobotMap.init();
+		MotorSet = new MotorSet();
 		m_oi = new OI();
 		m_chooser.addDefault("Default Auto", new Stop());
 		// chooser.addObject("My Auto", new MyAutoCommand());
