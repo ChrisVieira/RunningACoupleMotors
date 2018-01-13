@@ -37,6 +37,7 @@ public class Robot extends TimedRobot {
 	 */
 	@Override
 	public void robotInit() {
+		RobotMap.init();
 		m_oi = new OI();
 		m_chooser.addDefault("Default Auto", new Stop());
 		// chooser.addObject("My Auto", new MyAutoCommand());
