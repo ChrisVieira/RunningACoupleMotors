@@ -14,7 +14,7 @@ public class RunPositive extends Command {
 	}
 
 	protected void execute() {
-		Robot.MotorSet.runFullSpeedPositive(1);
+		Robot.MotorSet.runFullSpeedPositive(Robot.MotorSet.motorSpeed);
 	}
 
 	protected boolean isFinished() {
