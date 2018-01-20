@@ -7,13 +7,14 @@
 
 package org.usfirst.frc.team5112.robot;
 
+import edu.wpi.cscore.UsbCamera;
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-import org.usfirst.frc.team5112.robot.commands.RunNegative;
 import org.usfirst.frc.team5112.robot.commands.Stop;
 import org.usfirst.frc.team5112.robot.subsystems.MotorSet;
 
@@ -43,6 +44,10 @@ public class Robot extends TimedRobot {
 		m_chooser.addDefault("Default Auto", new Stop());
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", m_chooser);
+		UsbCamera camera1 = CameraServer.getInstance().startAutomaticCapture(0);
+		camera1.setResolution(320, 240);
+		UsbCamera camera2 = CameraServer.getInstance().startAutomaticCapture(1);
+		camera2.setResolution(320, 240);
 	}
 
 	/**

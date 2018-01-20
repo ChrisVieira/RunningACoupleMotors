@@ -8,7 +8,7 @@ public class RobotMap {
 	public static VictorSP motor2;
 
 	  public static void init() {
-		  motor1 = new VictorSP(0);
-		  motor2 = new VictorSP(1);
+		  motor1 = new VictorSP(6);
+		  motor2 = new VictorSP(7);
 	  }
 }
