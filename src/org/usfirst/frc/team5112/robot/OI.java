@@ -2,6 +2,8 @@ package org.usfirst.frc.team5112.robot;
 
 import org.usfirst.frc.team5112.robot.commands.DecreaseMotorSpeed;
 import org.usfirst.frc.team5112.robot.commands.IncreaseMotorSpeed;
+import org.usfirst.frc.team5112.robot.commands.RunClockwise;
+import org.usfirst.frc.team5112.robot.commands.RunCounterclockwise;
 import org.usfirst.frc.team5112.robot.commands.RunNegative;
 import org.usfirst.frc.team5112.robot.commands.RunPositive;
 import org.usfirst.frc.team5112.robot.commands.Stop;
@@ -16,6 +18,8 @@ public class OI {
 	public JoystickButton joystickButtonThree;
     public JoystickButton joystickButtonFour;
     public JoystickButton joystickButtonFive;
+    public JoystickButton joystickButtonSeven;
+    public JoystickButton joystickButtonEight;
     public JoystickButton joystickButtonEleven;
     public JoystickButton joystickButtonTwelve;
        
@@ -34,6 +38,11 @@ public class OI {
 		joystickButtonEleven.whenPressed(new IncreaseMotorSpeed());
 		joystickButtonTwelve = new JoystickButton(joystick, 12);
 		joystickButtonTwelve.whenPressed(new DecreaseMotorSpeed());
+		joystickButtonSeven = new JoystickButton(joystick, 7);
+		joystickButtonSeven.whileHeld(new RunClockwise());
+		joystickButtonEight = new JoystickButton(joystick, 8);
+		joystickButtonEight.whileHeld(new RunCounterclockwise());
+		
 	
 		SmartDashboard.putNumber("Motor Speed: ", Robot.MotorSet.motorSpeed);
 	}

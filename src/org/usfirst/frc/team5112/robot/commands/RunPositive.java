@@ -15,6 +15,7 @@ public class RunPositive extends Command {
 
 	protected void execute() {
 		Robot.MotorSet.runFullSpeedPositive(Robot.MotorSet.motorSpeed);
+//		System.out.println("Current: " + RobotMap.pdp.getCurrent(10));
 	}
 
 	protected boolean isFinished() {
